@@ -3,40 +3,51 @@ def usaha():
     print("|| APLIKASI PERENCANAAN USAHA ||")
     print("================================")
     print("")
+    print("Silahkan Pilih Menu!")
+    print("1. Menghitung Perencananaan Membuka Usaha")
+    print("2. Menghitung Keuntungan dari Usaha")
+    menu = int(input("Masukan Pilihan = "))
+    if menu == 1 :
+        alat()
+    elif menu == 2 :
+        Untung()
+    else:
+        print("Bilangan Yang anda masukan salah")
+def alat():
     nmalat = input("Masukan Nama Alat yang dibutuhkan =")
-    Jumalat = int(input("Masukan Harga Alat ="))
+    jumalat = int(input("Masukan Harga Alat ="))
     bahan()
+    
+def bahan():
     nmbahan = input("Masukan Nama Bahan Yang dibutuhkan = ")
     jumbahan = int(input("Masukan Harga Bahan ="))
     lanjut()
+    
+def lanjut():
     listrik = int(input("Masukan Uang Listrik = "))
     Air = int(input("Masukan Uang Air = "))
     karyawan = int(input("Masukan Jumlah Karyawan yang akan dipekerjakan ="))
     uangkaryawan = int(input("Masukan Gaji Karyawan Yang akan dipekerjakan ="))
     toko = int(input("Masukan Harga Kontrakan ="))
     rumus()
+    
+def rumus():
     global Jumalat, Jumbahan, listrik, Air, karyawan, uangkaryawan, toko
-    jumtot = usaha(Jumalat) + Jumbahan
-    tkaryawan = self.karyawan * self.uangkaryawan
-    modal = jumtot + self.listrik + self.Air + self.tkaryawan + self.toko
+    jumtot = Jumalat + Jumbahan
+    self.tkaryawan = self.karyawan * self.uangkaryawan
+    self.modal = jumtot + self.listrik + self.Air + self.tkaryawan + self.toko
     print("")
     print("")
     print("=> Jadi Modal yang diperlukan adalah", self.modal)       
+    perulangan
     
 def perulangan():
     ulang = input ("Apakah anda ingin Mengulang lagi ?[y/n]")
     if ulang == "y" or ulang == "Y" :
         usaha()
-        bahan()
-        lanjut()
-        rumus()
-        perulangan()
     elif ulang == "n" or ulang == "N":
         exit()
         
-#Memanggil Fungsi
-usaha()
-perulangan()
 def Untung():
     print("=========================================")
     print("||APLIKASI MENGHITUNG UNTUNG RUGI USAHA||")
@@ -48,74 +59,74 @@ def Untung():
     jenjang = int(input("Masukan Pilihan Anda ="))
     if jenjang == 1:
         self.waktu = int(input("Waktu Usaha Yang Akan anda Hitung (Hari) =")) 
-        Untung.barang(self)
+        barang()
 
     elif jenjang == 2:
         self.waktu = int(input("Waktu Usaha Yang Akan anda Hitung (Tahun) =")) 
-        Untung.barang2(self)
+        barang2()
 
     elif jenjang == 3:
         self.waktu = int(input("Waktu Usaha Yang Akan anda Hitung (Bulan) =")) 
-        Untung.barang3(self)
+        baarng3()
 
     else :
         print("Maaf Bilangan Yang Anda Masukan Salah")
+    
 
+def barang():
+    toko = input("Nama Toko : =")
+    Jual = int(input("Masukan Total Penjualan ="))
+    modal = int(input("Masukan Modal Yang dikeluarkan (hari)="))
+    karyawan = int(input("masukan Jumlah Karyawan ="))
+    gajikaryawan = int(input("Masukan Gaji Karyawan = "))
+    rumus()
 
-def barang(self):
-    self.toko = input("Nama Toko : =")
-    self.Jual = int(input("Masukan Total Penjualan ="))
-    self.modal = int(input("Masukan Modal Yang dikeluarkan (hari)="))
-    self.karyawan = int(input("masukan Jumlah Karyawan ="))
-    self.gajikaryawan = int(input("Masukan Gaji Karyawan = "))
-    Untung.rumus(self)
-
-def barang2(self):
-    self.toko = input("Nama Toko =")
-    self.Jual = int(input("Masukan Total Penjualan ="))
-    self.modal = int(input("Masukan Modal Yang dikeluarkan (hari)="))
-    self.karyawan = int(input("masukan Jumlah Karyawan ="))
-    self.gajikaryawan = int(input("Masukan Gaji Karyawan = "))
-    Untung.rumus1(self)       
+def barang2():
+    toko = input("Nama Toko =")
+    Jual = int(input("Masukan Total Penjualan ="))
+    modal = int(input("Masukan Modal Yang dikeluarkan (hari)="))
+    karyawan = int(input("masukan Jumlah Karyawan ="))
+    gajikaryawan = int(input("Masukan Gaji Karyawan = "))
+    rumus1()     
 
 def barang3(self):
-    self.toko = input("Nama Toko =")
-    self.Jual = int(input("Masukan Total Penjualan ="))
-    self.modal = int(input("Masukan Modal Yang dikeluarkan (hari)="))
-    self.karyawan = int(input("masukan Jumlah Karyawan ="))
-    self.gajikaryawan = int(input("Masukan Gaji Karyawan = "))
-    Untung.rumus2(self)
+    toko = input("Nama Toko =")
+    Jual = int(input("Masukan Total Penjualan ="))
+    modal = int(input("Masukan Modal Yang dikeluarkan (hari)="))
+    karyawan = int(input("masukan Jumlah Karyawan ="))
+    gajikaryawan = int(input("Masukan Gaji Karyawan = "))
+    rumus2()
 
-def rumus(self):
+def rumus():
     global waktu, nmJual, Jual, modal, karyawan, gajikaryawan
-    self.tmodal = self.modal * self.waktu
-    self.tkaryawan = self.karyawan * self.gajikaryawan
-    self.total = self.tmodal + self.tkaryawan
-    self.tola = self.Jual - self.total
-    self.rugi = self.total - self.Jual
-    Untung.cetak(self)
+    tmodal = self.modal * self.waktu
+    tkaryawan = self.karyawan * self.gajikaryawan
+    total = self.tmodal + self.tkaryawan
+    tola = self.Jual - self.total
+    rugi = self.total - self.Jual
+    cetak()
 
-def rumus1(self):
+def rumus1():
     global waktu, nmJual, Jual, modal, karyawan, gajikaryawan
-    self.twaktu = self.waktu * 7 
-    self.tmodal = self.modal * self.twaktu
-    self.tkaryawan = self.karyawan * self.gajikaryawan
-    self.total = self.tmodal + self.tkaryawan
-    self.tola = self.Jual - self.total
-    self.rugi = self.total - self.Jual
-    Untung.cetak(self)
+    twaktu = self.waktu * 7 
+    tmodal = self.modal * self.twaktu
+    tkaryawan = self.karyawan * self.gajikaryawan
+    total = self.tmodal + self.tkaryawan
+    tola = self.Jual - self.total
+    rugi = self.total - self.Jual
+    cetak()
 
-def rumus2(self):
+def rumus2():
     global waktu, nmJual, Jual, modal, karyawan, gajikaryawan
-    self.twaktu = self.waktu * 30
-    self.tmodal = self.modal * self.waktu
-    self.tkaryawan = self.karyawan * self.gajikaryawan
-    self.total = self.tmodal + self.tkaryawan
-    self.tola = self.Jual - self.total
-    self.rugi = self.total - self.Jual
-    Untung.cetak(self)
+    twaktu = self.waktu * 30
+    tmodal = self.modal * self.waktu
+    tkaryawan = self.karyawan * self.gajikaryawan
+    total = self.tmodal + self.tkaryawan
+    tola = self.Jual - self.total
+    rugi = self.total - self.Jual
+    cetak()
 
-def cetak(self):
+def cetak():
     print ("=========================================")
     print ("||   Aplikasi MENGHITUNG UNTUNG RUGI   ||")
     print ("=========================================")
@@ -130,28 +141,15 @@ def cetak(self):
         print("=============Selamat Usaha Anda Sukses=============")
     elif self.tola <= 0:
         print("==============Maaf Usaha Anda Akan Bangkrut================")
-    perulangan. _init_(self)
+    perulangan()
 
 
 def perulangan(self):
     ulang = input("Apakah anda ingin mengulang  lagi ? [y/n] ")
     if ulang == "y" or ulang == "Y" :
-        usaha. _init_(self)
-        usaha.bahan(self)
-        usaha.lanjut(self)
-        usaha.rumus(self)
-        usaha.show_data(self)
-        perulangan. _init_(self)
+        usaha()
     elif ulang == "n" or ulang == "N" :
         exit()          
 
 #Memanggil Fungsi  
-Untung()
-barang()
-barang2()
-barang3()
-rumus()
-rumus1()
-rumus2()
-cetak()
-perulangan()
+usaha()
