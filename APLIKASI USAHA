@@ -1,6 +1,16 @@
+#|====================================|
+#|Aplikasi USAHA                      |
+#|Disusun Oleh :                      |
+#|      ATHALA NAUFAL PRATAMA         |
+#|      ROYZAN WIDA SAPUTRA           |
+#|Prodi : D3 - Teknik Informatika     |
+#|POLITEKNIK NEGERI SEMARANG          |
+#|====================================|
+
 barang = []
+hargaab = []
 class usaha():
-    def _init_(self):
+    def __init__(self):
         print("================================")
         print("||       APLIKASI USAHA       ||")
         print("================================")
@@ -13,7 +23,7 @@ class usaha():
         if menu == 1 :
             usaha.alat(self)
         elif menu == 2 :
-            Untung. _init_(self)
+            Untung. __init__(self)
         else:
             print("Bilangan Yang anda masukan salah")
         
@@ -23,7 +33,12 @@ class usaha():
         ulang = input("Apakah anda ingin mengulang  lagi ? [y/n] ")
         if ulang == "y" or ulang == "Y" :
             usaha.alat(self)
-        self.hargaaa = int(input("Masukkan Harga Harga Bahan ="))
+        self.hargaab = 0
+        n = int(input("Masukan Jumlah Alat ="))
+        for x in range (n):
+            self.hargaab = float(input("Masukkan Harga Alat ke-{} : ".format(x+1)))
+            hargaab.append(self.hargaab)
+        usaha.bahan(self)
             
     def bahan(self):
         self.nmbahan = input("Masukan Nama Bahan Yang dibutuhkan = ")
@@ -31,7 +46,12 @@ class usaha():
         ulang = input("Apakah anda ingin mengulang  lagi ? [y/n] ")
         if ulang == "y" or ulang == "Y" :
             usaha.bahan(self)
-        self.hargaab = int(input("Masukkan Harga Harga Bahan ="))
+        self.hargab = 0
+        n = int(input("Masukan Jumlah Bahan ="))
+        for x in range (n):
+            self.hargaab = float(input("Masukkan Harga Harga Bahan ke-{} : ".format(x+1)))
+            hargaab.append(self.hargaab)
+        usaha.lanjut(self)
             
     def lanjut(self):
         self.listrik = int(input("Masukan Uang Listrik = "))
@@ -39,31 +59,31 @@ class usaha():
         self.karyawan = int(input("Masukan Jumlah Karyawan yang akan dipekerjakan ="))
         self.uangkaryawan = int(input("Masukan Gaji Karyawan Yang akan dipekerjakan ="))
         self.toko = int(input("Masukan Harga Kontrakan ="))
+        usaha.rumus(self)
         
     def rumus(self):
         global hargaa, hargab
-        coba = self.hargaa + self.hargaab
+        coba = sum(hargaab)
         self.tkaryawan = self.karyawan * self.uangkaryawan
         self.modal = coba + self.listrik + self.Air + self.tkaryawan + self.toko
         print("")
         print("")
         print("=> Jadi Modal yang diperlukan adalah", self.modal)
+        usaha.show_data(self)
+        
             
     def show_data(self):
-        if len(barang) <= 0:
-            print ("BELUM ADA DATA")
-        else:
-            print("======================================")
-            print("||  ALAT DAN BAHAN YANG DIPERLUKAN  ||")
-            print("======================================")
-            print("")
-            for indeks in range(len(barang)):
-                print ("[%d] %s" % (indeks, barang[indeks]))
-            perulangan. _init_(self)            
+        print("======================================")
+        print("||  ALAT DAN BAHAN YANG DIPERLUKAN  ||")
+        print("======================================")
+        print("")
+        for indeks in range(len(barang)):
+            print ("[%d] %s" % (indeks, barang[indeks]))
+        perulangan. __init__(self)            
     
                 
 class Untung():
-    def _init_(self):
+    def __init__(self):
         print("========================================")
         print("||  APLIKASI MENGHITUNG UNTUNG USAHA  ||")
         print("========================================")
@@ -78,7 +98,7 @@ class Untung():
             Untung.barang(self)
             
         elif jenjang == 2:
-            self.waktu = int(input("Waktu Usaha Yang Akan anda Hitung (Tahun) =")) 
+            self.waktu = int(input("Waktu Usaha Yang Akan anda Hitung (Minggu) =")) 
             Untung.barang2(self)
                 
         elif jenjang == 3:
@@ -157,35 +177,32 @@ class Untung():
             print("=============Selamat Usaha Anda Sukses=============")
         elif self.tola <= 0:
             print("==============Maaf Usaha Anda Akan Bangkrut================")
-        perulangan. _init_(self)
+        perulangan. __init__(self)
         
             
 class perulangan():
-    def _init_(self):
+    def __init__(self):
         ulang = input("Apakah anda ingin mengulang  lagi ? [y/n] ")
         if ulang == "y" or ulang == "Y" :
-            usaha. _init_(self)
+            usaha. __init__(self)
             usaha.bahan(self)
             usaha.lanjut(self)
             usaha.rumus(self)
             usaha.show_data(self)
-            perulangan. _init_(self)
+            perulangan. __init__(self)
         elif ulang == "n" or ulang == "N" :
             exit()          
 
 class penempatan(usaha):
-    def _init_(self):
-        usaha. _init_(self)
-        usaha.bahan(self)
-        usaha.lanjut(self)
-        usaha.rumus(self)
-        usaha.show_data(self)
+    def __init__(self):
+        usaha. __init__(self)
 class beruntung(Untung):
-    def _init_(self):
-        Untung. _init_(self)
+    def __init__(self):
+        Untung. __init__(self)
 class pengulang(perulangan):
-    def _init_(self):
-        perulangan. _init_(self)
+    def __init__(self):
+        perulangan. __init__(self)
         
 a=penempatan()
 b=pengulang()
+
