@@ -37,3 +37,121 @@ def perulangan():
 #Memanggil Fungsi
 usaha()
 perulangan()
+def Untung():
+    print("=========================================")
+    print("||APLIKASI MENGHITUNG UNTUNG RUGI USAHA||")
+    print("=========================================")
+    print("Pilih Waktu Usaha yang akan di hitung!!")
+    print("1. Hari")
+    print("2. Minggu")
+    print("3. Bulan")
+    jenjang = int(input("Masukan Pilihan Anda ="))
+    if jenjang == 1:
+        self.waktu = int(input("Waktu Usaha Yang Akan anda Hitung (Hari) =")) 
+        Untung.barang(self)
+
+    elif jenjang == 2:
+        self.waktu = int(input("Waktu Usaha Yang Akan anda Hitung (Tahun) =")) 
+        Untung.barang2(self)
+
+    elif jenjang == 3:
+        self.waktu = int(input("Waktu Usaha Yang Akan anda Hitung (Bulan) =")) 
+        Untung.barang3(self)
+
+    else :
+        print("Maaf Bilangan Yang Anda Masukan Salah")
+
+
+def barang(self):
+    self.toko = input("Nama Toko : =")
+    self.Jual = int(input("Masukan Total Penjualan ="))
+    self.modal = int(input("Masukan Modal Yang dikeluarkan (hari)="))
+    self.karyawan = int(input("masukan Jumlah Karyawan ="))
+    self.gajikaryawan = int(input("Masukan Gaji Karyawan = "))
+    Untung.rumus(self)
+
+def barang2(self):
+    self.toko = input("Nama Toko =")
+    self.Jual = int(input("Masukan Total Penjualan ="))
+    self.modal = int(input("Masukan Modal Yang dikeluarkan (hari)="))
+    self.karyawan = int(input("masukan Jumlah Karyawan ="))
+    self.gajikaryawan = int(input("Masukan Gaji Karyawan = "))
+    Untung.rumus1(self)       
+
+def barang3(self):
+    self.toko = input("Nama Toko =")
+    self.Jual = int(input("Masukan Total Penjualan ="))
+    self.modal = int(input("Masukan Modal Yang dikeluarkan (hari)="))
+    self.karyawan = int(input("masukan Jumlah Karyawan ="))
+    self.gajikaryawan = int(input("Masukan Gaji Karyawan = "))
+    Untung.rumus2(self)
+
+def rumus(self):
+    global waktu, nmJual, Jual, modal, karyawan, gajikaryawan
+    self.tmodal = self.modal * self.waktu
+    self.tkaryawan = self.karyawan * self.gajikaryawan
+    self.total = self.tmodal + self.tkaryawan
+    self.tola = self.Jual - self.total
+    self.rugi = self.total - self.Jual
+    Untung.cetak(self)
+
+def rumus1(self):
+    global waktu, nmJual, Jual, modal, karyawan, gajikaryawan
+    self.twaktu = self.waktu * 7 
+    self.tmodal = self.modal * self.twaktu
+    self.tkaryawan = self.karyawan * self.gajikaryawan
+    self.total = self.tmodal + self.tkaryawan
+    self.tola = self.Jual - self.total
+    self.rugi = self.total - self.Jual
+    Untung.cetak(self)
+
+def rumus2(self):
+    global waktu, nmJual, Jual, modal, karyawan, gajikaryawan
+    self.twaktu = self.waktu * 30
+    self.tmodal = self.modal * self.waktu
+    self.tkaryawan = self.karyawan * self.gajikaryawan
+    self.total = self.tmodal + self.tkaryawan
+    self.tola = self.Jual - self.total
+    self.rugi = self.total - self.Jual
+    Untung.cetak(self)
+
+def cetak(self):
+    print ("=========================================")
+    print ("||   Aplikasi MENGHITUNG UNTUNG RUGI   ||")
+    print ("=========================================")
+    print ("")
+    print ("| Nama Toko/Usaha : ", self.toko )
+    print ("| Jumlah Karyawan = ", self.karyawan)
+    print ("| Gaji Karyawan = ", self.gajikaryawan)
+    print ("| Keuntungan = ", self.tola)
+    print ("| Kerugian = ", self.rugi)
+    print ("")
+    if self.tola >= 0 :
+        print("=============Selamat Usaha Anda Sukses=============")
+    elif self.tola <= 0:
+        print("==============Maaf Usaha Anda Akan Bangkrut================")
+    perulangan. _init_(self)
+
+
+def perulangan(self):
+    ulang = input("Apakah anda ingin mengulang  lagi ? [y/n] ")
+    if ulang == "y" or ulang == "Y" :
+        usaha. _init_(self)
+        usaha.bahan(self)
+        usaha.lanjut(self)
+        usaha.rumus(self)
+        usaha.show_data(self)
+        perulangan. _init_(self)
+    elif ulang == "n" or ulang == "N" :
+        exit()          
+
+#Memanggil Fungsi  
+Untung()
+barang()
+barang2()
+barang3()
+rumus()
+rumus1()
+rumus2()
+cetak()
+perulangan()
