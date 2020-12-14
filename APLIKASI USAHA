@@ -1,0 +1,39 @@
+def usaha():
+    print("================================")
+    print("|| APLIKASI PERENCANAAN USAHA ||")
+    print("================================")
+    print("")
+    nmalat = input("Masukan Nama Alat yang dibutuhkan =")
+    Jumalat = int(input("Masukan Harga Alat ="))
+    bahan()
+    nmbahan = input("Masukan Nama Bahan Yang dibutuhkan = ")
+    jumbahan = int(input("Masukan Harga Bahan ="))
+    lanjut()
+    listrik = int(input("Masukan Uang Listrik = "))
+    Air = int(input("Masukan Uang Air = "))
+    karyawan = int(input("Masukan Jumlah Karyawan yang akan dipekerjakan ="))
+    uangkaryawan = int(input("Masukan Gaji Karyawan Yang akan dipekerjakan ="))
+    toko = int(input("Masukan Harga Kontrakan ="))
+    rumus()
+    global Jumalat, Jumbahan, listrik, Air, karyawan, uangkaryawan, toko
+    jumtot = usaha(Jumalat) + Jumbahan
+    tkaryawan = self.karyawan * self.uangkaryawan
+    modal = jumtot + self.listrik + self.Air + self.tkaryawan + self.toko
+    print("")
+    print("")
+    print("=> Jadi Modal yang diperlukan adalah", self.modal)       
+    
+def perulangan():
+    ulang = input ("Apakah anda ingin Mengulang lagi ?[y/n]")
+    if ulang == "y" or ulang == "Y" :
+        usaha()
+        bahan()
+        lanjut()
+        rumus()
+        perulangan()
+    elif ulang == "n" or ulang == "N":
+        exit()
+        
+#Memanggil Fungsi
+usaha()
+perulangan()
